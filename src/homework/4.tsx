@@ -2,7 +2,7 @@ import { createContext, useMemo, useState, useContext, ReactNode } from "react";
 import noop from "lodash/noop";
 
 type MenuIds = "first" | "second" | "last";
-type SelectedMenu = { id?: MenuIds };
+type SelectedMenu = { id: MenuIds };
 type Menu = { id: MenuIds; title: string };
 
 type MenuSelected = {

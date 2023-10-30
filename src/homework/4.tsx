@@ -13,7 +13,7 @@ type MenuAction = {
   onSelectedMenu: (menu: SelectedMenu) => void;
 };
 
-const MenuSelectedContext = createContext<MenuSelected>({ selectedMenu: {} });
+const MenuSelectedContext = createContext<MenuSelected>({ selectedMenu: { id: "first" } });
 const MenuActionContext = createContext<MenuAction>({ onSelectedMenu: noop });
 
 type PropsProvider = {
@@ -21,7 +21,7 @@ type PropsProvider = {
 };
 
 function MenuProvider({ children }: PropsProvider) {
-  const [selectedMenu, setSelectedMenu] = useState<SelectedMenu>({});
+  const [selectedMenu, setSelectedMenu] = useState<SelectedMenu>({ id: "first" });
 
   const menuContextAction = useMemo(
     () => ({
